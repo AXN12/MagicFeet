@@ -245,7 +245,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                               const SizedBox(height: 10),
                               const Text(
-                                'Alina Nicoleta Tilea este fondatoarea Magic Feet Sibiu și specialistă în pedichiură medicală. '
+                                'TEST TEST TEST !!!!!!Alina Nicoleta Tilea este fondatoarea Magic Feet Sibiu și specialistă în pedichiură medicală. '
                                     'A absolvit numeroase cursuri de perfecționare și are o experiență vastă în domeniu. '
                                     'Alina este recunoscută pentru dedicarea sa în oferirea de soluții personalizate pentru sănătatea picioarelor.',
                                 style: TextStyle(fontSize: 20),
