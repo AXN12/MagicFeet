@@ -89,7 +89,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                               const SizedBox(height: 20),
                               const Text(
-                                'Bine ați venit la Magic Feet Sibiu, un salon specializat '
+                                ' TEST Bine ați venit la Magic Feet Sibiu, un salon specializat '
                                     'în pedichiură medicală. Cu o echipă de profesioniști dedicați '
                                     'și cu cele mai moderne echipamente, ne asigurăm că picioarele tale '
                                     'primesc îngrijirea de care au nevoie.',
