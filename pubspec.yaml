@@ -1,0 +1,61 @@
+name: magic_feet
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.0.20
+  webview_flutter: ^4.9.0  # Actualizare la versiunea 4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.0
+  build_web_compilers: ^4.0.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/assets/logo.png
+    - lib/assets/background.png
+    - lib/assets/med1.jpg
+    - lib/assets/med2.jpg
+    - lib/assets/med3.jpg
+    - lib/assets/photo1.png
+    - lib/assets/ped2.png
+    - lib/assets/ped3.png
+    - lib/assets/pedi1.jpg
+    - lib/assets/pedi2.jpg
+    - lib/assets/pedi4.jpg
+    - lib/assets/pedi5.jpg
+    - lib/assets/pedi6.jpg
+    - lib/assets/backgroundmaini.jpg
+    - lib/assets/photo2.jpg
+    - lib/assets/alina.jpg
+    - lib/assets/mani1.jpg
+    - lib/assets/mani2.jpg
+    - lib/assets/mani3.jpg
+    - lib/assets/mani4.jpg
+    - lib/assets/mani5.jpg
+    - lib/assets/mani6.jpg
+    - lib/assets/mani7.jpg
+    - lib/assets/mani8.jpg
+    - lib/assets/mani9.jpg
+    - lib/assets/mani10.jpg
+    - lib/assets/mani11.jpg
+    - lib/assets/mani12.jpg
+    - lib/assets/mani13.jpg
+    - lib/assets/slide1.jpg
+    - lib/assets/slide2.jpg
+    - lib/assets/slide3.jpg
+    - lib/assets/slide4.jpg
+    - lib/assets/slide5.jpg
