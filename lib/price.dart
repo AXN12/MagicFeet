@@ -58,7 +58,7 @@ class PricesPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 const Text(
-                                  'Lista Prețuri Pedichiură\nÎncepând cu 01.02.2024',
+                                  'Lista Prețuri Pedichiură\n',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 24,
@@ -101,19 +101,7 @@ class PricesPage extends StatelessWidget {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text('2. Pedichiură clasică ojă'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('120 RON'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('3. Pedichiură ojă semipermanentă'),
+                                          child: Text('2. Pedichiură ojă semipermanentă cu călcâie'),
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
@@ -125,147 +113,7 @@ class PricesPage extends StatelessWidget {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '4. Întreținere 4-6 săpt. pedichiură medicală'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('110 RON'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('5. Curățare unghie micotică/onicoliză'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('70 RON/unghie'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '6. Unghie încarnată (fără sistem corecție)'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('100 RON/unghie'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('7. Curățare onicogrifoză'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('80 RON/unghie'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('8. Curățare verucă'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('65 RON/sedință'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '9. Curățare bătătură interdigitală deget mic'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('50 RON'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '10. Îndepărtare calozitate călcâie'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('60 RON'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '11. Protezare haluce cu acril antimicotic'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('70 RON'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '12. Protezare unghie încarnată fir compozit'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('100 RON - unghie mare'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '13. Protezare unghie încarnată fir titan'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('150 RON - unghie mare'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                              '14. Protezare unghie încarnată sistem 3To sponge'),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('250 RON'),
-                                        ),
-                                      ],
-                                    ),
-                                    TableRow(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text('15. Repoziționare fir titan'),
+                                          child: Text('3. Pedichiură ojă semipermanentă fără călcâie'),
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
@@ -277,7 +125,139 @@ class PricesPage extends StatelessWidget {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text('16. Repoziționare sistem 3To sponge'),
+                                          child: Text('4. Curățare unghie micotică/onicoliză'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('80 RON/unghie'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('5. Unghie încarnată (fără sistem corecție)'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('100 RON/unghie'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('6. Curățare onicogrifoză (unghie îngroșată)'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('80 RON/unghie'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('7. Curățare verucă plantară'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('100 RON/ședință'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('8. Curățare bătătură intradigitală/deget mic'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('70 RON'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('9. Îndepărtare calozitate călcâie'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('60 RON'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('10. Protezare haluce cu acril antimicotic'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('80 RON'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('11. Protezare unghie încarnată fir compozit'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('100 RON - unghie mare\n 50 RON - unghie mică'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('12. Protezare unghie încarnată fir titan'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('150 RON - unghie mare\n 50 RON - unghie mică'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('13. Protezare unghie încarnată sistem 3To sponge'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('250 RON'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('14. Repoziționare fir titan'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('100 RON'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('15. Repoziționare sistem 3To sponge'),
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
@@ -289,11 +269,23 @@ class PricesPage extends StatelessWidget {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text('17. Aplicare pansament - LIGASANO'),
+                                          child: Text('16. Aplicare pansament - LIGASANO/COPOLIN'),
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text('50 RON/sedinta'),
+                                          child: Text('15 RON/10 RON'),
+                                        ),
+                                      ],
+                                    ),
+                                    TableRow(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('17. Aplicare bandă KINESIOLOGICĂ'),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('15 RON'),
                                         ),
                                       ],
                                     ),

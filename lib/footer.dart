@@ -10,7 +10,7 @@ class Footer extends StatelessWidget {
       padding: const EdgeInsets.all(16.0), // Padding pentru conținut
       child: const Center(
         child: Text(
-          '© 2024 Magic Feet Sibiu. Toate drepturile rezervate.',
+          '© 2024 Magic Feet Sibiu',
           style: TextStyle(
             color: Colors.white, // Culoarea textului
             fontSize: 16,

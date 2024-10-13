@@ -85,16 +85,17 @@ class _ManichiuraState extends State<Manichiura> {
                       // Descrierea salonului și a serviciilor de manichiură
                       Center(
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.85, // Container mai mic
+                          width: MediaQuery.of(context).size.width * 0.55, // Container mai mic
                           padding: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.8), // Opacitate pentru text
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: const Text(
-                            'Cu o experiență de peste 4 ani în domeniul manichiurii, Magic Feet Sibiu a realizat sute de programări și a oferit servicii de cea mai înaltă calitate. '
-                                'Fie că este vorba de o manichiură clasică sau de tratamente specializate, garantăm un rezultat impecabil și durabil. Îți oferim servicii adaptate nevoilor tale, '
-                                'folosind cele mai noi tehnologii și produse de top pentru a-ți oferi un aspect frumos și sănătos al unghiilor.',
+                            'Cu 3 ani de experiență și numeroase cursuri de perfecționare,\n'
+                                ' te invit să descoperi servicii profesionale de manichiură,\n'
+                              'pentru unghii sănătoase și un stil rafinat care, \n'
+                                'te vor face să te simți cu adevărat răsfățată.',
                             style: TextStyle(fontSize: 24),
                             textAlign: TextAlign.center,
                           ),

@@ -64,6 +64,15 @@ class ContactPage extends StatelessWidget {
                         subtitle: 'Strada Măgura 36, Sibiu', // Subtitlu cu adresa
                         url: 'https://www.google.com/maps/search/?api=1&query=Strada+Măgura+36,+Sibiu',
                       ),
+                      const SizedBox(height: 16), // Spațiu între carduri
+
+                      // Card nou pentru orar
+                      _buildScheduleCard(context), // Adaugă cardul de program
+
+                      const SizedBox(height: 16), // Spațiu între carduri
+
+                      // Informație despre programări
+                      _buildAppointmentInfo(context), // Card cu informațiile pentru programări
                     ],
                   ),
                 ),
@@ -91,6 +100,38 @@ class ContactPage extends StatelessWidget {
             subtitle: subtitle != null ? Text(subtitle) : null, // Subtitlu opțional
             trailing: const Icon(Icons.arrow_forward),
           ),
+        ),
+      ),
+    );
+  }
+
+  // Funcție pentru a construi cardul de orar
+  Widget _buildScheduleCard(BuildContext context) {
+    return SizedBox(
+      width: 500, // Lățimea maximă a cardului
+      child: Card(
+        elevation: 4,
+        child: ListTile(
+          leading: const Icon(Icons.access_time),
+          title: const Text('Program de lucru'),
+          subtitle: const Text(
+            'Luni - Vineri: 9:00 - 18:00\nSâmbătă - Duminică: Închis',
+            style: TextStyle(height: 1.5), // Spacing între linii
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Funcție pentru a construi cardul de programări
+  Widget _buildAppointmentInfo(BuildContext context) {
+    return SizedBox(
+      width: 500, // Lățimea maximă a cardului
+      child: Card(
+        elevation: 4,
+        child: ListTile(
+          leading: const Icon(Icons.info_outline),
+          title: const Text('Programările se fac telefonic'),
         ),
       ),
     );
