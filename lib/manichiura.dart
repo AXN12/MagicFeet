@@ -85,16 +85,16 @@ class _ManichiuraState extends State<Manichiura> {
                       // Descrierea salonului și a serviciilor de manichiură
                       Center(
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.55, // Container mai mic
+                          width: MediaQuery.of(context).size.width * 0.75, // Container mai mic
                           padding: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.8), // Opacitate pentru text
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: const Text(
-                            'Cu 3 ani de experiență și numeroase cursuri de perfecționare,\n'
+                            'Cu 3 ani de experiență și numeroase cursuri de perfecționare,'
                                 ' te invit să descoperi servicii profesionale de manichiură,\n'
-                              'pentru unghii sănătoase și un stil rafinat care, \n'
+                              'pentru unghii sănătoase și un stil rafinat care, '
                                 'te vor face să te simți cu adevărat răsfățată.',
                             style: TextStyle(fontSize: 24),
                             textAlign: TextAlign.center,
