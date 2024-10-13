@@ -64,9 +64,9 @@ class _ManichiuraState extends State<Manichiura> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Manichiură', currentPage: 'Manichiură'), // Folosește CustomAppBar aici
-      body: SingleChildScrollView( // Învăluim întreaga coloană în SingleChildScrollView
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min, // Permitem coloană să ocupe doar spațiul necesar
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Stack(
               children: [
@@ -75,6 +75,7 @@ class _ManichiuraState extends State<Manichiura> {
                   child: Image.asset(
                     'lib/assets/backgroundmaini.jpg', // Imaginea de fundal
                     fit: BoxFit.cover,
+                    height: MediaQuery.of(context).size.height * 0.4, // Ajustăm înălțimea imaginii de fundal
                   ),
                 ),
                 Padding(
@@ -82,48 +83,65 @@ class _ManichiuraState extends State<Manichiura> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      const SizedBox(height: 150), // Distanță pentru text față de partea superioară
+
                       // Descrierea salonului și a serviciilor de manichiură
                       Center(
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.75, // Container mai mic
+                          width: MediaQuery.of(context).size.width * 0.85, // Container mai mic și responsive
                           padding: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.8), // Opacitate pentru text
+                            color: Colors.white.withOpacity(0.9), // Opacitate mai ridicată
                             borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                              ),
+                            ],
                           ),
                           child: const Text(
-                            'Cu 3 ani de experiență și numeroase cursuri de perfecționare,'
-                                ' te invit să descoperi servicii profesionale de manichiură,\n'
-                              'pentru unghii sănătoase și un stil rafinat care, '
-                                'te vor face să te simți cu adevărat răsfățată.',
-                            style: TextStyle(fontSize: 24),
+                            'Cu 3 ani de experiență și numeroase cursuri de perfecționare, '
+                                'te invit să descoperi servicii profesionale de manichiură, '
+                                'pentru unghii sănătoase și un stil rafinat care te vor face să te simți cu adevărat răsfățată.',
+                            style: TextStyle(fontSize: 20, height: 1.5), // Font mai mic și linie mai spațiată
                             textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 30), // Mai mult spațiu între secțiuni
 
                       // Galeria de imagini
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          // Imaginea curentă - ajustată la dimensiuni pătrate
                           Container(
-                            constraints: const BoxConstraints(
-                              maxWidth: 400, // Limita de lățime pentru imagini
-                              maxHeight: 400, // Limita de înălțime pentru imagini
+                            width: MediaQuery.of(context).size.width * 0.85, // Galeria responsive
+                            height: MediaQuery.of(context).size.width * 0.85, // Păstrăm proporțiile pătrate
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.2),
+                                  spreadRadius: 2,
+                                  blurRadius: 8,
+                                ),
+                              ],
                             ),
-                            child: Image.asset(
-                              images[_currentIndex],
-                              width: double.infinity, // Lățimea imaginii să se potrivească cu containerul
-                              height: double.infinity, // Înălțimea imaginii să se potrivească cu containerul
-                              fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                images[_currentIndex],
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
                             ),
                           ),
-
-                          // Săgeată stânga (Previous)
+                          // Săgeți pentru navigare
                           Positioned(
-                            left: 10,
+                            left: 15,
                             child: GestureDetector(
                               onTap: _previousImage,
                               child: Icon(
@@ -133,10 +151,8 @@ class _ManichiuraState extends State<Manichiura> {
                               ),
                             ),
                           ),
-
-                          // Săgeată dreapta (Next)
                           Positioned(
-                            right: 10,
+                            right: 15,
                             child: GestureDetector(
                               onTap: _nextImage,
                               child: Icon(
@@ -148,116 +164,102 @@ class _ManichiuraState extends State<Manichiura> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20), // Distanță între galerie și tabel
+                      const SizedBox(height: 30), // Mai mult spațiu între galerie și tabel
 
                       // Tabelul cu prețuri
                       Container(
+                        padding: const EdgeInsets.all(16.0),
+                        margin: const EdgeInsets.symmetric(horizontal: 16.0),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.5), // Fundal transparent pentru tabel
-                          borderRadius: BorderRadius.circular(10), // Rounding for table edges
+                          color: Colors.white.withOpacity(0.8), // Fundal transparent pentru tabel
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                            ),
+                          ],
                         ),
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.85, // Tabel mai îngust
-                          child: Table(
-                            border: TableBorder.all(color: Colors.grey.withOpacity(0.8)), // Limite pentru tabel
-                            children: const [
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('Serviciu', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('Preț', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)), // Mărime mai mare
-                                  ),
-                                ],
+                        child: Table(
+                          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                          border: TableBorder.all(color: Colors.grey.withOpacity(0.8)),
+                          children: const [
+                            TableRow(
+                              decoration: BoxDecoration(
+                                color: Colors.lightGreenAccent, // Fundal pentru header
                               ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('1. Manichiură clasica/curățare', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('50 RON', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('2. Ojă semipermanentă apex', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('90 RON', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('3. Întreținere gel schimbarea arhitecturii', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('135 RON', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('4. Întreținere gel', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('110 RON', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('5. Construcție gel', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('135 RON', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('6. Îndepărtare material + curățare', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('70 RON', style: TextStyle(fontSize: 18)), // Mărime mai mare
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: Text('Serviciu', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18), textAlign: TextAlign.center),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: Text('Preț', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18), textAlign: TextAlign.center),
+                                ),
+                              ],
+                            ),
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Manichiură clasică', style: TextStyle(fontSize: 16)),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('50 RON', style: TextStyle(fontSize: 16)),
+                                ),
+                              ],
+                            ),
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Ojă semipermanentă apex', style: TextStyle(fontSize: 16)),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('90 RON', style: TextStyle(fontSize: 16)),
+                                ),
+                              ],
+                            ),
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Întreținere gel', style: TextStyle(fontSize: 16)),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('110 RON', style: TextStyle(fontSize: 16)),
+                                ),
+                              ],
+                            ),
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Construcție gel', style: TextStyle(fontSize: 16)),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('135 RON', style: TextStyle(fontSize: 16)),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: 20), // Distanță între tabel și buton
+                      const SizedBox(height: 30), // Mai mult spațiu între tabel și buton
 
                       // Butonul Instagram
                       ElevatedButton(
                         onPressed: _launchURL,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white70, // Fundal verde pentru buton
+                          backgroundColor: Colors.pinkAccent, // Fundal roz pentru buton
                           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0), // Padding pentru buton
-                          textStyle: const TextStyle(fontSize: 24), // Mărime text
+                          textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold), // Stil text
                         ),
                         child: const Text('Urmărește-ne pe Instagram!'),
                       ),
@@ -266,7 +268,7 @@ class _ManichiuraState extends State<Manichiura> {
                 ),
               ],
             ),
-            const Footer(), // Aici adăugăm footer-ul
+            const Footer(), // Footer-ul
           ],
         ),
       ),
