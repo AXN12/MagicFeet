@@ -1,6 +1,6 @@
 # magic_feet
 
-Magic feet sibiu
+Magic feet Sibiu. Pedichiură medicinală & manichiură.
 
 ## Getting Started
 
