@@ -79,60 +79,82 @@ class MyHomePage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Text(
-                                'Magic Feet Sibiu\n by Alina Țilea ',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineMedium
-                                    ?.copyWith(
-                                      color: Colors.green.shade800,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 20),
-                              const Text(
-                                ' Bine ați venit la Magic Feet Sibiu, un salon specializat '
-                                'în pedichiură medicală. Cu o echipă de profesioniști dedicați '
-                                'și cu cele mai moderne echipamente, ne asigurăm că picioarele tale '
-                                'primesc îngrijirea de care au nevoie.',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.grey,
-                                  height: 1.5,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 20),
-                              const Text(
-                                'Indiferent dacă ai nevoie de tratamente pentru afecțiuni specifice '
-                                'ale picioarelor sau pur și simplu dorești o îngrijire profesională, '
-                                'Magic Feet Sibiu îți oferă soluții personalizate și eficiente.',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.grey,
-                                  height: 1.5,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 20),
-                              const Text(
-                                'Vizitează-ne și bucură-te de picioare sănătoase și frumoase!',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 20),
+                              LayoutBuilder(
+                                builder: (context, constraints) {
+                                  // Detectăm dimensiunea ecranului
+                                  double screenWidth =
+                                      MediaQuery.of(context).size.width;
+                                  double textFontSize = screenWidth > 600
+                                      ? 22
+                                      : 16; // Ajustăm dimensiunea textului
 
-                              // Adăugăm slider-ul pentru imagini de la salon
-                              const _SalonImageSlider(),
+                                  return Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Magic Feet Sibiu\nby Alina Țilea',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headlineMedium
+                                            ?.copyWith(
+                                              color: Colors.green.shade800,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: screenWidth > 600
+                                                  ? 28
+                                                  : 24, // Ajustăm mărimea titlului
+                                            ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 20),
+                                      Text(
+                                        'Bine ați venit la Magic Feet Sibiu, un salon specializat '
+                                        'în pedichiură medicală. Cu o echipă de profesioniști dedicați '
+                                        'și cu cele mai moderne echipamente, ne asigurăm că picioarele tale '
+                                        'primesc îngrijirea de care au nevoie.',
+                                        style: TextStyle(
+                                          fontSize: textFontSize,
+                                          color: Colors.grey,
+                                          height: 1.5,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 20),
+                                      Text(
+                                        'Indiferent dacă ai nevoie de tratamente pentru afecțiuni specifice '
+                                        'ale picioarelor sau pur și simplu dorești o îngrijire profesională, '
+                                        'Magic Feet Sibiu îți oferă soluții personalizate și eficiente.',
+                                        style: TextStyle(
+                                          fontSize: textFontSize,
+                                          color: Colors.grey,
+                                          height: 1.5,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 20),
+                                      Text(
+                                        'Vizitează-ne și bucură-te de picioare sănătoase și frumoase!',
+                                        style: TextStyle(
+                                          fontSize: screenWidth > 600
+                                              ? 18
+                                              : 14, // Ajustăm dimensiunea textului bold
+                                          color: Colors.green,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 20),
+                                      // Slider pentru imagini de la salon
+                                      const _SalonImageSlider(),
+                                    ],
+                                  );
+                                },
+                              ),
                             ],
                           ),
                         ),
                       ),
+
                       const SizedBox(height: 30),
 
                       // Secțiunea pentru Pedichiura Simplă
@@ -400,9 +422,9 @@ class MyHomePage extends StatelessWidget {
                                   //     ),
                                   //   ],
                                   // ),
-                                 // const SizedBox(height: 20),
-                                 // Divider(
-                                     // thickness: 2, color: Colors.grey[300]),
+                                  // const SizedBox(height: 20),
+                                  // Divider(
+                                  // thickness: 2, color: Colors.grey[300]),
                                 ],
                               ),
                             );
